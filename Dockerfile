@@ -2,6 +2,9 @@
 
 FROM gcr.io/kaniko-project/executor:latest as builder
 
+FROM debian:stretch
+
+COPY --from=builder /kaniko /kaniko
 RUN echo "{}" > /kaniko/.docker/config.json
 
 ENV PATH="$PATH:/kaniko"
