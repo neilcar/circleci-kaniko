@@ -2,7 +2,7 @@
 
 FROM gcr.io/kaniko-project/executor:latest as builder
 
-FROM debian:stretch
+FROM debian:stretch-slim
 
 COPY --from=builder /kaniko /kaniko
 RUN echo "{}" > /kaniko/.docker/config.json
