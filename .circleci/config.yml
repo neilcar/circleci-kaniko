@@ -5,7 +5,7 @@ workflows:
     jobs:
       - build-and-test
       - orb-tools/publish-dev:
-          orb-name: glenjamin/kaniko-publish
+          orb-name: neilcar/kaniko-publish
           publish-alpha-version: false
           publish-sha-version: true
           requires:
@@ -20,7 +20,7 @@ workflows:
               only:
                 - master
       - orb-tools/dev-promote-prod:
-          orb-name: glenjamin/kaniko-publish
+          orb-name: neilcar/kaniko-publish
           requires:
             - approval
           filters:
